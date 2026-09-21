@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b2839"><meta name="description" content="Флаг на пляже La Zenia / Cala Bosque: опубликованные данные спасательной службы Ambumar и время проверки.">
+<title>La Zenia · Флаг пляжа</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--ink:#0b2839;--muted:#526676;--line:#dce5e9;--accent:#617a8a}*{box-sizing:border-box}body{margin:0;background:#edf3f6;color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:620px;margin:auto;padding:36px 20px calc(30px + env(safe-area-inset-bottom))}.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:26px}.place{margin-top:3px;font-weight:600}.coast{border:1px solid #b8cbd5;border-radius:100px;padding:6px 12px;font-size:.875rem;white-space:nowrap}h1{font-size:2.8rem;line-height:1.1;letter-spacing:-.045em;margin:0 0 8px}h2{font-size:1.1rem;margin:0 0 12px}p{margin:0 0 14px}.sub{color:var(--muted)}.card{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 12px 36px #0b283908}.signal{height:8px;background:var(--accent)}.inside{padding:27px}.badge{display:inline-block;background:#edf3f6;border-radius:99px;padding:5px 11px;font-size:.875rem}.status-row{display:flex;align-items:center;gap:18px;margin:22px 0 18px}.flag{width:64px;height:64px;flex-shrink:0;color:var(--accent)}#status{font-size:1.85rem;line-height:1.2;letter-spacing:-.025em;margin:0}#meaning{color:var(--muted);margin:0}dl{margin:24px 0 0}dl div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:12px 0;border-top:1px solid var(--line)}dt{color:var(--muted);font-size:.9rem}dd{margin:0;text-align:right;font-size:.95rem;font-weight:600}button{width:100%;border:0;border-radius:13px;background:var(--ink);color:white;font:600 1rem/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:15px;cursor:pointer;margin-top:20px;min-height:48px}button:disabled{opacity:.6}button:focus-visible,a:focus-visible{outline:3px solid #1685b0;outline-offset:4px}.hint{font-size:.875rem;color:var(--muted);margin:10px 0 0}.sources{padding:26px 2px 8px}.links{display:grid;gap:10px}a{color:#125b79;text-underline-offset:4px}.source-link{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);font-weight:600}.notice{border-left:3px solid #a3b9c5;padding-left:14px;font-size:.875rem;color:var(--muted);margin-top:20px}footer{margin-top:26px;color:var(--muted);font-size:.8rem}#feedback{min-height:1.5em}.legend{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0;color:var(--muted);font-size:.875rem}.legend span{white-space:nowrap}@media(max-width:360px){main{padding:22px 14px}.inside{padding:20px}h1{font-size:2.4rem}.coast{display:none}dl div{display:block}dd{text-align:left}.status-row{gap:10px}#status{font-size:1.6rem}}@media(prefers-reduced-motion:no-preference){button{transition:opacity .2s}a:hover{color:#0b2839}}
+</style>
+</head>
+<body>
+<main>
+<header><div><div class="eyebrow">Пляжный статус</div><div class="place">Orihuela Costa · Испания</div></div><span class="coast">Средиземное море</span></header>
+<h1>La Zenia</h1><p class="sub">Cala Bosque · Данные спасателей</p>
+<section class="card" aria-label="Статус пляжа"><div class="signal"></div><div class="inside">
+<span class="badge" id="badge">Проверяем данные</span>
+<div class="status-row" role="status" aria-live="polite"><svg class="flag" aria-hidden="true" viewBox="0 0 64 64"><path d="M13 55V8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M18 10h36l-9 12 9 12H18z" fill="currentColor"/></svg><h2 id="status">Загрузка…</h2></div>
+<p id="meaning">Получаем последнюю сохранённую проверку.</p>
+<dl><div><dt>Попытка проверки</dt><dd id="checked">—</dd></div><div><dt>Ответ источника получен</dt><dd id="fetched">—</dd></div><div><dt>Время у спасателей</dt><dd id="reported">—</dd></div></dl>
+<p class="hint">Время наших проверок — местное, Испания.</p>
+<button type="button" id="refresh">Обновить страницу</button><p class="hint" id="feedback" aria-live="polite"></p>
+<p class="hint">Сбор данных запланирован каждые 15 минут. Кнопка загружает последнюю сохранённую проверку.</p>
+</div></section>
+<section class="sources"><h2>Проверить первоисточник</h2><div class="links">
+<a class="source-link" href="https://ambumar.app/estados-playas.php" target="_blank" rel="noopener">Ambumar · сообщения спасателей <span aria-hidden="true">↗</span></a>
+<a class="source-link" href="https://www.orihuela.es/desarrollo-de-la-ciudad/costa/" target="_blank" rel="noopener">Муниципалитет · отдел Costa <span aria-hidden="true">↗</span></a>
+<a class="source-link" href="https://www.aemet.es/es/eltiempo/prediccion/playas" target="_blank" rel="noopener">AEMET · прогноз побережья <span aria-hidden="true">↗</span></a>
+</div><p class="hint">В таблице Ambumar: ORIHUELA → CALA BOSQUE.</p></section>
+<p class="notice">Это личная страница с данными Ambumar, а не официальный сайт. Флаг и указания спасателей на пляже имеют приоритет. Прогноз погоды не подтверждает разрешение купаться.</p>
+<footer>nadadeneg.com / flag</footer>
+<noscript><p>Для автоматического статуса включите JavaScript или откройте ссылку Ambumar выше.</p></noscript>
+</main>
+<script>
+'use strict';
+const STALE_MS=45*60*1000;
+const colours={green:'#238048',yellow:'#ba8700',red:'#c33140',unknown:'#617a8a'};
+const names={green:'Зелёный флаг',yellow:'Жёлтый флаг',red:'Красный флаг'};
+const descriptions={green:'Обычно означает: купание разрешено. Проверьте флаг на месте.',yellow:'Обычно означает: купание с осторожностью и ограничениями. Уточните условия у спасателей.',red:'Означает запрет на купание.'};
+let latest=null, fetching=false;
+const el=id=>document.getElementById(id);
+function time(value){if(!value||!Number.isFinite(Date.parse(value)))return '—';return new Intl.DateTimeFormat('ru-RU',{timeZone:'Europe/Madrid',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date(value));}
+function localDate(value){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value));}
+function classify(data,now=Date.now()){
+ if(!data||data.schema_version!==1||data.beach!=='CALA BOSQUE')return 'invalid';
+ const at=Date.parse(data.checked_at);
+ if(!Number.isFinite(at)||at>now+60000)return 'invalid';
+ if(now-at>STALE_MS||localDate(at)!==localDate(now))return 'stale';
+ if(data.state==='no_report')return 'no_report';
+ if(data.state==='unavailable')return 'unavailable';
+ const fetched=Date.parse(data.fetched_at);
+ if(data.state==='reported'&&names[data.flag]&&Number.isFinite(fetched)&&fetched<=now+60000&&now-fetched<=STALE_MS)return 'reported';
+ return 'invalid';
+}
+function render(data){
+ const state=classify(data);
+ el('checked').textContent=time(data?.checked_at);
+ el('fetched').textContent=time(data?.fetched_at);
+ el('reported').textContent=data?.source_time ? data.source_time+' · дата не указана' : 'Не указано';
+ document.documentElement.style.setProperty('--accent',state==='reported'?colours[data.flag]:colours.unknown);
+ const messages={no_report:['Нет сообщения','Нет данных','Спасательная служба не опубликовала флаг в доступной таблице. Это не означает, что купание разрешено.'],unavailable:['Источник недоступен','Нет данных','Не удалось получить или распознать сообщение спасателей. Проверьте первоисточник.'],stale:['Проверка устарела','Данные устарели','Обновление не поступило вовремя или относится к прошлому дню. Текущий флаг не подтверждён.'],invalid:['Нет актуальных данных','Нет данных','Не удалось прочитать актуальный статус. Откройте страницу спасателей.']};
+ if(state==='reported'){
+  el('badge').textContent='Опубликовано у Ambumar';el('status').textContent=names[data.flag];
+  el('meaning').textContent=descriptions[data.flag]+' Источник не указывает дату сообщения: подтвердить, что оно за сегодня, нельзя.';
+ }else{const m=messages[state];el('badge').textContent=m[0];el('status').textContent=m[1];el('meaning').textContent=m[2];}
+}
+async function refresh(){
+ if(fetching)return;fetching=true;el('refresh').disabled=true;el('feedback').textContent='Загружаем проверку…';
+ try{
+  const res=await fetch('status.json?t='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(12000)});
+  if(!res.ok)throw new Error('status');latest=await res.json();render(latest);el('feedback').textContent='Последняя сохранённая проверка загружена.';
+ }catch(_){latest=null;render(null);el('feedback').textContent='Нет связи или файл статуса ещё не опубликован.';}
+ finally{fetching=false;el('refresh').disabled=false;}
+}
+el('refresh').addEventListener('click',refresh);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
+setInterval(()=>{if(!document.hidden)refresh();},60000);
+refresh();
+</script>
+</body>
+</html>

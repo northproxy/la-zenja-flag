@@ -1,0 +1,29 @@
+name: Update beach flag
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: beach-flag-deploy
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test source parsing
+        run: python3 -m unittest discover -s tests -v
+      - name: Fetch flag
+        run: python3 scripts/collect.py
+      - name: Publish to World4You over FTPS
+        env:
+          W4Y_FTP_HOST: ${{ secrets.W4Y_FTP_HOST }}
+          W4Y_FTP_USER: ${{ secrets.W4Y_FTP_USER }}
+          W4Y_FTP_PASSWORD: ${{ secrets.W4Y_FTP_PASSWORD }}
+          W4Y_FTP_DIR: ${{ secrets.W4Y_FTP_DIR }}
+        run: python3 scripts/deploy.py
